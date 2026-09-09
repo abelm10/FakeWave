@@ -1,0 +1,833 @@
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.
+Traceback (most recent call last):
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\queueing.py", line 870, in process_events
+    response = await route_utils.call_process_api(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\route_utils.py", line 408, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 2316, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\blocks.py", line 1683, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\gradio\utils.py", line 1114, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\app.py", line 18, in analyze
+    _, _, probs = predict(audio_path, model=_model)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\predict.py", line 41, in predict
+    logmel = preprocess_clip(path, config).unsqueeze(0).to(device)  # (1, 1, n_mels, time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 271, in preprocess_clip
+    _, _, wav = _run_pipeline(path, config, random_crop=random_crop, rng=rng)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 254, in _run_pipeline
+    raw_wav, raw_sr = load_raw(path)
+                      ^^^^^^^^^^^^^^
+  File "D:\FakeWave\preprocess.py", line 104, in load_raw
+    data, sr = sf.read(str(path), dtype="float32", always_2d=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 313, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 708, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abelm\AppData\Local\Programs\Python\Python312\Lib\site-packages\soundfile.py", line 1296, in _open
+    raise LibsndfileError(err, prefix=f"Error opening {self.name!r}: ")
+soundfile.LibsndfileError: Error opening 'C:\\Users\\abelm\\AppData\\Local\\Temp\\gradio\\4afdd651973a0a676c2571358fa2e9daab3cdc3c6801526e808e9f680ea9ff6e\\Recording.m4a': Format not recognised.

@@ -1,0 +1,41 @@
+D:\FakeWave\preprocess.py:323: UserWarning: FakeWaveDataset: 1 manifest file(s) not found on disk; skipping them.
+  warnings.warn(f"FakeWaveDataset: {n_missing} manifest file(s) not found on disk; skipping them.")
+D:\FakeWave\preprocess.py:335: UserWarning: FakeWaveDataset: 2 manifest file(s) failed to open as audio (corrupt or non-audio); skipping them.
+  warnings.warn(
+Device: cpu
+[balanced subset] target=900/class, max_per_generator=None
+label  source                        
+fake   mlaad_hi_bark                      99
+       mlaad_hi_indicf5                   99
+       mlaad_hi_indri_tts_0_1             99
+       mlaad_hi_omnivoice                 99
+       mlaad_hi_ringg_squirrel_tts_v1     99
+       mlaad_hi_veena                     98
+       mlaad_hi_voxcpm2                   98
+       mlaad_hi_voxtral                   98
+       mlaad_hi_xtts_v2                   98
+       teammate_bark                      13
+real   kaggle_hindi                      900
+dtype: int64
+Train: 1437 clips (729 real / 711 fake)
+Val:   360 clips (171 real / 189 fake)
+Epoch 01 | train loss 0.3043 acc 0.882 | val loss 0.2099 acc 0.903
+  -> saved detector.pt (epoch 1)
+Epoch 02 | train loss 0.1381 acc 0.961 | val loss 0.1002 acc 0.956
+  -> saved detector.pt (epoch 2)
+Epoch 03 | train loss 0.0885 acc 0.971 | val loss 0.0477 acc 0.994
+  -> saved detector.pt (epoch 3)
+Epoch 04 | train loss 0.0719 acc 0.976 | val loss 0.0694 acc 0.997
+  -> saved detector.pt (epoch 4)
+Epoch 05 | train loss 0.0468 acc 0.990 | val loss 0.0199 acc 1.000
+  -> saved detector.pt (epoch 5)
+Epoch 06 | train loss 0.0647 acc 0.976 | val loss 0.0187 acc 1.000
+  -> saved detector.pt (epoch 6)
+Epoch 07 | train loss 0.0409 acc 0.987 | val loss 0.0846 acc 0.972
+Epoch 08 | train loss 0.0563 acc 0.981 | val loss 0.0200 acc 1.000
+Epoch 09 | train loss 0.0413 acc 0.989 | val loss 0.0787 acc 0.969
+Epoch 10 | train loss 0.0412 acc 0.985 | val loss 0.0189 acc 0.994
+Epoch 11 | train loss 0.0213 acc 0.995 | val loss 0.0810 acc 0.969
+Epoch 12 | train loss 0.0294 acc 0.992 | val loss 0.0810 acc 0.975
+
+Done. Best val accuracy: 1.000 (val loss 0.0187)

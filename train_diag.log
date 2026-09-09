@@ -1,0 +1,9 @@
+Device: cpu
+real: 900 clips (excluding holdout)
+fake: 6878 clips (excluding holdout)
+Train class counts: real=718, fake=5504  -> class weights: real=4.333, fake=0.565
+Epoch 01 | loss 0.2177 | val acc 0.992
+  -> saved detector.pt
+Epoch 02 | loss 0.0780 | val acc 0.979
+Epoch 03 | loss 0.0608 | val acc 0.972
+Done. Best validation accuracy: 0.992

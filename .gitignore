@@ -1,0 +1,8 @@
+data/
+scratch/
+.gradio/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
