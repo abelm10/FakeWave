@@ -1,5 +1,5 @@
 kaggle dataset link
-https://www.kaggle.com/datasets?new=true
+www.kaggle.com/datasets/abelmathews2548401/fakewave-fake-vs-real-audio-dataset
 
 # Hindi Deepfake Audio Detector
 
