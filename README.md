@@ -1,6 +1,5 @@
 kaggle dataset link
-[www.kaggle.com/datasets/abelmathews2548401/fakewave-fake-vs-real-audio-dataset
-](https://www.kaggle.com/abelmathews2548401)
+(https://www.kaggle.com/abelmathews2548401)
 # Hindi Deepfake Audio Detector
 
 Detects whether a Hindi voice clip is genuine or AI-generated (TTS / voice cloning).
